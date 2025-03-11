@@ -22,6 +22,7 @@ spec:
         - containerPort: 5000
 
         ## Reading ENV and renaming it to be read by the pod
+        ## same is used in postgres deployment for secret and username and host
         env:
         - name: DB_HOST
           valueFrom:
@@ -46,6 +47,7 @@ spec:
 
         
         ## check if pod if ready and live
+         
         readinessProbe:
           httpGet:
             path: /health
